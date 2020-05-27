@@ -14,3 +14,10 @@
 /DocumentAPI/obj/Debug/netcoreapp2.1/DocumentAPI.pdb
 /DocumentAPI/bin/Debug/netcoreapp2.1/Properties/launchSettings.json
 /DocumentAPI/bin/Debug/netcoreapp2.1/settings.json
+*.assets.cache
+*.csproj.nuget.dgspec.json
+*.csprojAssemblyReference.cache
+/.vs/DocumentAPI/config/applicationhost.config
+*.csproj.nuget.g.props
+/DocumentAPI/obj/project.assets.json
+/DocumentAPI/obj/project.nuget.cache
