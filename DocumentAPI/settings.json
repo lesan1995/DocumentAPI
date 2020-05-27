@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "SqlServerConnection": "Server=TOMTOM\\SQLEXPRESS;Initial Catalog=DbDocument;User Id=sa;Password=123456;"
+  }
+}

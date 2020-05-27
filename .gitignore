@@ -1,0 +1,16 @@
+*.suo
+*.dtbcache.v2
+*.csproj.CoreCompileInputs.cache
+/DocumentAPI/bin/Debug/netcoreapp2.1/DocumentAPI.deps.json
+/DocumentAPI/bin/Debug/netcoreapp2.1/DocumentAPI.dll
+/DocumentAPI/bin/Debug/netcoreapp2.1/DocumentAPI.pdb
+/DocumentAPI/bin/Debug/netcoreapp2.1/DocumentAPI.runtimeconfig.dev.json
+/DocumentAPI/bin/Debug/netcoreapp2.1/DocumentAPI.runtimeconfig.json
+/DocumentAPI/obj/Debug/netcoreapp2.1/DocumentAPI.RazorTargetAssemblyInfo.cache
+/DocumentAPI/obj/Debug/netcoreapp2.1/DocumentAPI.csproj.FileListAbsolute.txt
+/DocumentAPI/obj/Debug/netcoreapp2.1/DocumentAPI.csprojAssemblyReference.cache
+/DocumentAPI/obj/Debug/netcoreapp2.1/DocumentAPI.dll
+/DocumentAPI/obj/Debug/netcoreapp2.1/DocumentAPI.genruntimeconfig.cache
+/DocumentAPI/obj/Debug/netcoreapp2.1/DocumentAPI.pdb
+/DocumentAPI/bin/Debug/netcoreapp2.1/Properties/launchSettings.json
+/DocumentAPI/bin/Debug/netcoreapp2.1/settings.json
