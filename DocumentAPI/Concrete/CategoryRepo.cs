@@ -49,23 +49,23 @@ namespace DocumentAPI.Concrete
             return _context.Categories.FirstOrDefault(x => x.Id == categoryId);
         }
 
-        public bool IsCategoryExist(int categoryId)
-        {
-            return _context.Categories.Any(x => x.Id == categoryId);
-        }
 
         public Category AddCategory(Category category)
         {
-            var result = _context.Categories.Add(category).Entity;
+            _context.Categories.Add(category);
             _context.SaveChanges();
-            return result;
+            return category;
         }
 
         public Category UpdateCategory(Category category)
         {
-            _context.Entry(category).State = EntityState.Modified;
+            var categoryUpdate = _context.Categories.FirstOrDefault(x => x.Id == category.Id);
+            if (categoryUpdate != null)
+            {
+                categoryUpdate.Title = category.Title;
+            }
             _context.SaveChanges();
-            return category;
+            return categoryUpdate;
         }
 
         public Category RemoveCategory(Category category)

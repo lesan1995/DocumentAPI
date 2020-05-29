@@ -53,24 +53,18 @@ namespace DocumentAPI.Controllers
                 return BadRequest(ModelState);
             }
 
-            bool currentCategoryExist = _categoryRepo.IsCategoryExist(updateCategoryModel.Id);
+            Category currentCategory = _categoryRepo.GetCategory(updateCategoryModel.Id);
+            if(currentCategory == null) return NotFound("CategoryNotFound");
 
-            if (currentCategoryExist)
+            Category updateCategory = new Category()
             {
-                Category updateCategory = new Category()
-                {
-                    Id = updateCategoryModel.Id,
-                    Title = updateCategoryModel.Title
-                };
+                Id = updateCategoryModel.Id,
+                Title = updateCategoryModel.Title
+            };
 
-                var response = _categoryRepo.UpdateCategory(updateCategory);
+            var response = _categoryRepo.UpdateCategory(updateCategory);
 
-                return Ok(response);
-            }
-            else
-            {
-                return NotFound("CategoryNotFound");
-            }
+            return Ok(response);
 
         }
 
@@ -79,18 +73,11 @@ namespace DocumentAPI.Controllers
         public IActionResult RemoveCategory(int categoryId)
         {
 
-            
-            bool currentCategoryExist = _categoryRepo.IsCategoryExist(categoryId);
-            if (currentCategoryExist)
-            {
-                Category currentCategory = _categoryRepo.GetCategory(categoryId);
-                var response = _categoryRepo.RemoveCategory(currentCategory);
-                return Ok(response);
-            }
-            else
-            {
-                return NotFound("CategoryNotFound");
-            }
+            Category currentCategory = _categoryRepo.GetCategory(categoryId);
+            if (currentCategory == null) return NotFound("CategoryNotFound");
+
+            var response = _categoryRepo.RemoveCategory(currentCategory);
+            return Ok(response);
         }
     }
 }

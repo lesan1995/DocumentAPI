@@ -61,21 +61,24 @@ namespace DocumentAPI.Concrete
             return _context.Documents.FirstOrDefault(x => x.Id == documentId);
         }
 
-        public bool IsDocumentExist(int documentId)
-        {
-            return _context.Documents.Any(x => x.Id == documentId);
-        }
-
         public Document AddDocument(Document document)
         {
-            var result = _context.Documents.Add(document).Entity;
+            _context.Documents.Add(document);
             _context.SaveChanges();
-            return result;
+             return document;
         }
 
         public Document UpdateDocument(Document document)
         {
-            _context.Entry(document).State = EntityState.Modified;
+            var documentUpdate = _context.Documents.FirstOrDefault(x => x.Id == document.Id);
+            if (documentUpdate != null)
+            {
+                documentUpdate.Title = document.Title;
+                documentUpdate.Description = document.Description;
+                documentUpdate.CategoryId = document.CategoryId;
+                documentUpdate.Cover = document.Cover;
+                documentUpdate.PublishYear = document.PublishYear;
+            }
             _context.SaveChanges();
             return document;
         }

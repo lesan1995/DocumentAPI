@@ -10,7 +10,6 @@ namespace DocumentAPI.Abstract
     {
         List<Category> GetCategories();
         Category GetCategory(int categoryId);
-        bool IsCategoryExist(int categoryId);
         Category AddCategory(Category category);
         Category UpdateCategory(Category category);
         Category RemoveCategory(Category category);

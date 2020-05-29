@@ -1,6 +1,7 @@
 ﻿using DocumentAPI.DAL.EntityConfigurations;
 using DocumentAPI.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,18 @@ namespace DocumentAPI.DAL
         public DocumentDbContext(DbContextOptions<DocumentDbContext> options) : base(options)
         {
 
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                IConfigurationRoot configuration = new ConfigurationBuilder()
+                   .AddJsonFile("settings.json")
+                   .Build();
+                var connectionString = configuration.GetConnectionString("SqlServerConnection");
+                optionsBuilder.UseSqlServer(connectionString);
+            }
         }
     }
 }
