@@ -1,0 +1,224 @@
+{
+	"info": {
+		"_postman_id": "c9c575bd-6c9a-4239-85f6-1ecfa0be984a",
+		"name": "Document",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "get-categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/api/category/get-categories",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"category",
+								"get-categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"Title\" : \"Hoang Dã 3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_url}}/api/category/add-category",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"category",
+								"add-category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-category",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"Id\" : 2,\n\t\"Title\" : \"Thiên nhiên\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_url}}/api/category/update-category",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"category",
+								"update-category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove-category",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/api/category/remove-category/3",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"category",
+								"remove-category",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Document",
+			"item": [
+				{
+					"name": "get-documents",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/api/document/get-documents",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"document",
+								"get-documents"
+							],
+							"query": [
+								{
+									"key": "categoryId",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "keyword",
+									"value": "khoa học",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-document",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"CategoryId\" : 2,\n\t\"Title\" : \"Đắc Nhân Tâm\",\n\t\"Description\" : \"Sách hay về chinh phục lòng người\",\n\t\"Cover\" : \"https://www.vietiso.com/images/content/intro/c02-1_jpg.jpg\",\n\t\"PublishYear\" : 2014\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_url}}/api/document/add-document",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"document",
+								"add-document"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-document",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"Id\": 2,\n\t\"CategoryId\" : 2,\n\t\"Title\" : \"Kiến thức khoa học 1\",\n\t\"Description\" : \"Sách mô tả về các kiến thức khoa học\",\n\t\"Cover\" : \"/images/content/intro/c02-1_jpg.jpg\",\n\t\"PublishYear\" : 2014\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{api_url}}/api/document/update-document",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"document",
+								"update-document"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove-document",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/api/document/remove-document/2",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"api",
+								"document",
+								"remove-document",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
