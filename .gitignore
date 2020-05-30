@@ -1,0 +1,14 @@
+*.suo
+*.dtbcache.v2
+*.csproj.CoreCompileInputs.cache
+/.vs/*
+/DocumentAPI/bin/*
+/DocumentAPI/obj/*
+*.assets.cache
+*.csproj.nuget.dgspec.json
+*.csprojAssemblyReference.cache
+*.csproj.nuget.g.props
+/TestDocumentAPI/bin/*
+/TestDocumentAPI/obj/*
+/DocumentAPI/obj/Debug/netcoreapp2.1/DocumentAPI.AssemblyInfoInputs.cache
+/DocumentAPI/obj/Debug/netcoreapp2.1/DocumentAPI.csprojAssemblyReference.cache
